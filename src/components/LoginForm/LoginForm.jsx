@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,14 @@ export const LoginForm = () => {
         email: email.value,
         password: password.value,
       })
-    );
+    )
+      .unwrap()
+      .then(() => {
+        toast.success("Success log-in");
+      })
+      .catch(() => {
+        toast.error("some thing wrong ");
+      });
   };
   return (
     <div>
