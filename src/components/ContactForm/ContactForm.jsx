@@ -45,7 +45,7 @@ const ContactForm = () => {
 
             <Field
               name="number"
-              type="number"
+              type="text"
               placeholder={
                 errors.number && touched.number
                   ? "Please enter number"

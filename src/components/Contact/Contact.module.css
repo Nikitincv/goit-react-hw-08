@@ -19,14 +19,15 @@
   border: none;
   border-radius: 5px;
   background-color: #f9f9f9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   font-size: 16px;
-
+  color: #666;
   word-wrap: break-word;
 }
 
 .contactTitle {
   margin: 0 auto;
+  color: #666;
 }
 
 .contactBtn {
@@ -47,6 +48,6 @@
 }
 
 .icon {
-  font-size: 18px;
+  font-size: 12px;
   margin-right: 2px;
 }
