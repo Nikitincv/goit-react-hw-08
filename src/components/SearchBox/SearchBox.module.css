@@ -1,7 +1,15 @@
-.SearchBoxContainer {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  border-radius: 4px;
-  margin-bottom: 15px;
+.formInput {
+  margin: 0 auto;
+  width: 424px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+.formInput:focus {
+  outline: none;
+  box-shadow: 0 6px 16px rgba(220, 199, 199);
 }

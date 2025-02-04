@@ -7,18 +7,18 @@ import { useDispatch } from "react-redux";
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, "Too Short!")
-    .max(50, "Too Long!")
+    .max(20, "Too Long!")
     .required("Required"),
   number: Yup.string()
     .min(2, "Too Short!")
-    .max(50, "Too Long!")
+    .max(20, "Too Long!")
     .required("Required"),
 });
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   return (
-    <>
+    <div className={s.formContainer}>
       <Formik
         initialValues={{
           name: "",
@@ -31,24 +31,38 @@ const ContactForm = () => {
         }}
       >
         {({ errors, touched }) => (
-          <Form>
-            <label htmlFor="name">Name</label>
-            <Field name="name" />
-            {errors.name && touched.name ? <div>{errors.name}</div> : null}
+          <Form className={s.formBox}>
+            <h3 className={s.title}>Contact Form</h3>
+            <Field
+              name="name"
+              placeholder={
+                errors.name && touched.name ? "Please enter name" : "Name"
+              }
+              className={`${s.formInput} ${
+                errors.name && touched.name ? s.inputError : ""
+              }`}
+            />
 
-            <label htmlFor="number">Number</label>
-            <Field name="number" />
-            {errors.number && touched.number ? (
-              <div>{errors.number}</div>
-            ) : null}
+            <Field
+              name="number"
+              type="number"
+              placeholder={
+                errors.number && touched.number
+                  ? "Please enter number"
+                  : "Number"
+              }
+              className={`${s.formInput} ${
+                errors.number && touched.number ? s.inputError : ""
+              }`}
+            />
 
-            <button className={s.contactFormBtn} type="submit">
+            <button className={s.formBtn} type="submit">
               Add contact
             </button>
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
 

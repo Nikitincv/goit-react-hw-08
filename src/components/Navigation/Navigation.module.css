@@ -1,0 +1,25 @@
+.navBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.link {
+  color: #fff;
+  display: flex;
+
+  transition: all 0.3s ease;
+}
+.link:hover {
+  transform: scale(1.05);
+}
+.icon {
+  font-size: 24px;
+  padding-right: 4px;
+}
+
+.welcome {
+  margin: 0 auto;
+  color: #fff;
+}

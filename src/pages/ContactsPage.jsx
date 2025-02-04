@@ -7,6 +7,7 @@ import SearchBox from "../components/SearchBox/SearchBox";
 import { selectIsError, selectLoading } from "../redux/contacts/selectors";
 import { ErrorMessage } from "formik";
 import Loader from "../components/Loader/Loader";
+import s from "../components/ContactForm/ContactForm.module.css";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,10 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <div>
-      <ContactForm />
-      <SearchBox />
+      <div className={s.formContainer}>
+        <ContactForm />
+        <SearchBox />
+      </div>
       <ContactsList />
       {isError && <ErrorMessage error={isError} />}
       {isLoading && <Loader />}

@@ -8,8 +8,12 @@ const SearchBox = () => {
   };
   return (
     <div className={s.SearchBoxContainer}>
-      <label htmlFor="text">Find contacts by name</label>
-      <input type="text" onChange={handelChange} />
+      <input
+        className={s.formInput}
+        type="text"
+        onChange={handelChange}
+        placeholder="Find contacts by name"
+      />
     </div>
   );
 };
