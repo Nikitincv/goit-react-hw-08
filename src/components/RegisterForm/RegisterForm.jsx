@@ -5,6 +5,7 @@ import s from "./RegisterForm.module.css";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+
   const handelSubmit = (e) => {
     e.preventDefault();
     const { name, email, password } = e.target.elements;
@@ -17,7 +18,7 @@ const RegisterForm = () => {
     )
       .unwrap()
       .then(() => {
-        toast.success("Success Register");
+        toast.success(` Welcome, ${name.value}`);
       })
       .catch(() => {
         toast.error("some thing wrong ");

@@ -5,9 +5,11 @@ import s from "./LoginForm.module.css";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
   const handelSubmit = (e) => {
     e.preventDefault();
     const { email, password } = e.target.elements;
+
     dispatch(
       login({
         email: email.value,
@@ -16,7 +18,7 @@ export const LoginForm = () => {
     )
       .unwrap()
       .then(() => {
-        toast.success("Success log-in");
+        toast.success("Welcome back");
       })
       .catch(() => {
         toast.error("some thing wrong ");
